@@ -1,0 +1,32 @@
+AirflowDNS
+ec2-54-81-16-56.compute-1.amazonaws.com:8080
+This is the DNS of the Airflow service
+-
+AWSAccount
+787009328709
+This is the current AWS Account for this lab
+-
+AWSRegion
+us-east-1
+This is the current AWS Region for this lab
+-
+DagsBucket
+de-c2w4a1-787009328709-us-east-1-dags
+This is the S3 bucket for storing Apache Airflow Dags
+-
+PublicSubnetID
+subnet-036fce75f3d329aec
+This is the Public Subnet A ID for this Lab
+-
+RawDataBucket
+de-c2w4a1-787009328709-us-east-1-raw-data
+This is the S3 bucket for storing the extracted data
+-
+VPCID
+vpc-02b1fd2b654c597ef
+This is the VPC ID for this Lab
+
+
+aws s3 sync work_zone s3://de-c2w4a1-787009328709-us-east-1-raw-data/work_zone/
+aws s3 ls s3://de-c2w4a1-787009328709-us-east-1-raw-data/work_zone/ --recursive
+aws s3 sync src/dags s3://de-c2w4a1-787009328709-us-east-1-dags/dags
